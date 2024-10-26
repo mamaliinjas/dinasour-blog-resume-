@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    margin: 0px;
+    background-image: url("https://wallpapercave.com/wp/wp9021857.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 150px;
+    left: 250px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.login-container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="username"],
+input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="username"]:focus,
+input[type="password"]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #242424;
+    color: rgb(252, 252, 252);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+
+.messages .success {
+    color: green;
+    font-weight: bold;
+}
+
+
+.messages .info {
+    color: red;
+    font-style: bold;
+}
+
+
+.messages .error {
+    color: red;
+    font-weight: bold;
+}
+
+
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.messages li {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+}

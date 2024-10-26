@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Blog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Types of Dinosaurs</a>
+                <div class="dropdown-right-content">
+                    <a href="Carnivorous">CARNIVOROUS</a>
+                    <a href="herbivores">HERBIVORES</a>
+                    <a href="pterosaurs">PTEROSAURS</a>
+                </div>
+            </div>
+            <a href="contact">Contact Us</a>
+        </div>
+
+        <div class="auth-buttons">
+            {% if user.is_authenticated %}
+            <a href="logout" class="logout">Logout</a>
+            {% else %}
+            <a href="login">Login</a>
+            <a href="register" class="signup">Signup</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="title">
+        {% if user.is_authenticated %}
+        <h1>Welcome {{user.username}} to Dinosaurs Blog</h1>
+        {% else %}
+        <h1>Welcome to Dinosaurs Blog</h1>
+        {% endif %}
+    </div>
+    <div class="earth-container">
+        <div class="earth"></div>
+    </div>
+    <h2 class="explore-title">Let's Explore</h2>
+    <div class="boxes">
+        <a href="Carnivorous" class="box"
+            style="background-image: url('https://people.com/thmb/5KDao-j60iIjmK-Ds1zgnjUuuas=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/t-rex-2000-fa6c6f21c38249b4995cbf21cb5fe5ed.jpg');">
+            <h2>Carnivorous</h2>
+        </a>
+        <a href="herbivores" class="box"
+            style="background-image: url('https://media01.stockfood.com/largepreviews/MzU5MTEyNjgw/11584280-Brachiosaurus-dinosaurs-artwork.jpg');">
+            <h2>Herbivores</h2>
+        </a>
+        <a href="pterosaurs" class="box"
+            style="background-image: url('https://www.osc.org/wp-content/uploads/2020/09/Are-Pterodactyls-Dinosaurs-Orlando-science-Center.jpg');">
+            <h2>Pterosaurs</h2>
+        </a>
+    </div>
+
+</body>
+
+</html>

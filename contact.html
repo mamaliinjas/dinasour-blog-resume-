@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'contact.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn">Types of Dinosaurs</a>
+                <div class="dropdown-right-content">
+                    <a href="Carnivorous">CARNIVOROUS</a>
+                    <a href="herbivores">HERBIVORES</a>
+                    <a href="pterosaurs">PTEROSAURS</a>
+                </div>
+            </div>
+            <a href="contact">Contact Us</a>
+
+        </div>
+
+        <div class="auth-buttons">
+            {% if user.is_authenticated %}
+            <a href="logout" class="logout">Logout</a>
+            {% else %}
+            <a href="login">Login</a>
+            <a href="register" class="signup">Signup</a>
+            {% endif %}
+        </div>
+    </div>
+
+
+    <section class="contact-section">
+        <div class="contact-background">
+            <div class="container">
+                <h1>Contact Us</h1>
+                <p>Feel free to get in touch with us by filling the form below.</p>
+
+                <div class="contact-form">
+                    <form action="/submit-contact" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+
+
+                <div class="contact-info">
+                    <h2>Our Office</h2>
+                    <p><strong>Address:</strong> tehran , darake , mir esmaili</p>
+                    <p><strong>Email:</strong> mmliinjas@gmail.com</p>
+                    <p><strong>Phone:</strong>+989391343037</p>
+                </div>
+
+
+                <div class="map">
+                    <h2>Find Us Here</h2>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d3235.67683325374!2d51.3826177!3d35.8078662!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2str!4v1728933416962!5m2!1sen!2str"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
